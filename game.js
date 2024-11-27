@@ -10,6 +10,16 @@ let specialCh = false;
 let players;
 
 //első szó:
+
+let howmany = prompt("Do you wish to have a second player join?")
+while (howmany.toLowerCase() !== "yes" && howmany.toLowerCase() !== "no") {
+    howmany = prompt("Do you wish to have a second player join? Yes or No?")
+}
+
+if (howmany.toLowerCase() === "yes") {
+    player2 = true;
+}
+
 console.clear();
 console.log("Welcome to the Word Chain game!");
 while (players !== "2" && players !== "1"){
