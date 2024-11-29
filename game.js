@@ -11,14 +11,14 @@ let players;
 
 //első szó:
 
-let howmany = prompt("Do you wish to have a second player join?")
-while (howmany.toLowerCase() !== "yes" && howmany.toLowerCase() !== "no") {
-    howmany = prompt("Do you wish to have a second player join? Yes or No?")
-}
+// let howmany = prompt("Do you wish to have a second player join?")
+// while (howmany.toLowerCase() !== "yes" && howmany.toLowerCase() !== "no") {
+//     howmany = prompt("Do you wish to have a second player join? Yes or No?")
+// }
 
-if (howmany.toLowerCase() === "yes") {
-    player2 = true;
-}
+// if (howmany.toLowerCase() === "yes") {
+//     player2 = true;
+// }
 
 console.clear();
 console.log("Welcome to the Word Chain game!");
@@ -33,12 +33,6 @@ while (players !== "2" && players !== "1"){
         console.clear();
         console.log("Please choose between one and two!\n");
     }
-}
-let player1 = [];
-let player2 = [];
-
-while (!(dictionary.includes(word1))) {
-    specialCh = false;
     if (players === "1") {
         console.clear();
         console.log("You choose a single-player game!");
@@ -46,6 +40,12 @@ while (!(dictionary.includes(word1))) {
         console.clear();
         console.log("You choose a multi-player game!");
     }
+}
+let player1 = [];
+let player2 = [];
+
+while (!(dictionary.includes(word1))) {
+    specialCh = false;
     console.log(`(To quit, type "!quit")`);
     if (players === "2"){
         console.log("\nPLAYER ONE");
@@ -69,25 +69,27 @@ while (!(dictionary.includes(word1))) {
             process.exit();
         } else if (word1.substring(0, 4) === "show"){
             word1 = word1.substring(5);
+            // prompt(word1);
             if (word1 === "1" && players === "1"){
                 console.clear();
-                prompt(words);
+                // prompt(words);
             } else if (word1 === "1" && players === "2"){
                 console.clear();
-                console.log("PLAYER ONE's words so far: " + player1);
+                console.log("PLAYER ONE don't have any words yet.");
             } else if (word1 === "2" && players === "1"){
                 console.clear();
                 console.log("There is no second player!");
             } else if (word1 === "2" && players === "2"){
                 console.clear();
-                console.log("PLAYER TWO's words so far: " + player2);
+                console.log("PLAYER TWO don't have any words yet.");
             } else if (word1 === "all"){
                 console.clear();
-                console.log(words);
+                console.log("You don't have any words yet.");
+                word1 = "";
             }
         } else {
             console.clear();
-            prompt(`"` + word1 + `" is not a valid command!`);
+            prompt(`You don't have any words given yet!`);
         }
     } else if (specialCh === true){
         console.clear();
@@ -142,7 +144,7 @@ for (let i = 0; i < words.length; i++){
                 word1 = word1.substring(5);
                 if (word1 === "1" && players === "1"){
                     console.clear();
-                    prompt(words);
+                    // prompt(words);
                 } else if (word1 === "1" && players === "2"){
                     console.clear();
                     console.log("PLAYER ONE's words so far: " + player1);
